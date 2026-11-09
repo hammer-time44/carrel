@@ -1,0 +1,76 @@
+appId: com.carrel.app
+productName: Carrel
+copyright: Copyright © 2026 hammer-time
+
+directories:
+  output: release
+  buildResources: public
+
+files:
+  - "dist/**"
+  - "dist-electron/**"
+  - "package.json"
+
+fileAssociations:
+  - ext: pdf
+    name: PDF Document
+    role: Viewer
+    mimeType: application/pdf
+  - ext: pptx
+    name: PowerPoint Presentation
+    role: Viewer
+    mimeType: application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  artifactName: "${productName}-Setup-${version}.${ext}"
+  icon: public/icon.svg
+  # Authenticode Code Signing Configuration
+  # Supported via environment variables:
+  #   - WIN_CSC_LINK / CSC_LINK (path to .pfx or Base64 string)
+  #   - WIN_CSC_KEY_PASSWORD / CSC_KEY_PASSWORD (password)
+  # Or via Windows Certificate Store / EV Hardware Token:
+  #   - certificateSha1 / certificateSubjectName
+  signingHashAlgorithms:
+    - sha256
+  rfc3161TimeStampServer: "http://timestamp.digicert.com"
+
+nsis:
+  oneClick: true
+  perMachine: false
+  allowToChangeInstallationDirectory: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Carrel
+  uninstallDisplayName: "${productName} ${version}"
+  artifactName: "${productName}-Setup-${version}.${ext}"
+
+portable:
+  artifactName: "${productName}-Portable-${version}.${ext}"
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
+  category: public.app-category.education
+  hardenedRuntime: true
+  gatekeeperAssess: false
+
+linux:
+  target:
+    - target: AppImage
+    - target: deb
+  category: Education
+  maintainer: hammer-time

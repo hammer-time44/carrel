@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Carrel Design Tokens
+   Strict 4px/8px scale, WCAG AA contrast, local Inter typography
+   ========================================================================== */
+
+:root {
+  /* Spacing Scale (4px / 8px) */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* Typography */
+  --font-ui: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 13px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+
+  /* Transitions */
+  --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-duration: 150ms;
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radii */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Dimensions */
+  --titlebar-height: 38px;
+  --tabbar-height: 38px;
+  --rail-width: 48px;
+  --sidepanel-width: 240px;
+
+  /* Document badges */
+  --pdf-color: #e05656;
+  --pptx-color: #e08a3c;
+
+  /* Default Dark Mode Surfaces */
+  --bg-root: #0a0a0c;
+  --bg-surface: #121216;
+  --bg-surface-elevated: #18181e;
+  --bg-hover: rgba(255, 255, 255, 0.06);
+  --bg-active: rgba(255, 255, 255, 0.1);
+
+  --line: rgba(255, 255, 255, 0.07);
+  --line-strong: rgba(255, 255, 255, 0.16);
+
+  --text-main: #ececed;
+  --text-muted: #93939e;
+  --text-subtle: #5a5a66;
+
+  --accent: #ffffff;
+  --accent-contrast: #0a0a0c;
+  --focus-ring: rgba(255, 255, 255, 0.4);
+
+  --status-error: #f87171;
+  --status-warning: #fbbf24;
+  --status-success: #34d399;
+}
+
+/* Light Theme: Warm Paper Tone */
+[data-theme='light'] {
+  --bg-root: #f7f6f2;
+  --bg-surface: #efece6;
+  --bg-surface-elevated: #ffffff;
+  --bg-hover: rgba(0, 0, 0, 0.05);
+  --bg-active: rgba(0, 0, 0, 0.09);
+
+  --line: rgba(0, 0, 0, 0.08);
+  --line-strong: rgba(0, 0, 0, 0.18);
+
+  --text-main: #1f1e1b;
+  --text-muted: #68655e;
+  --text-subtle: #9c988f;
+
+  --accent: #1f1e1b;
+  --accent-contrast: #f7f6f2;
+  --focus-ring: rgba(0, 0, 0, 0.45);
+
+  --pdf-color: #c93d3d;
+  --pptx-color: #c87024;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-duration: 0ms;
+    --transition-fast: 0ms none;
+  }
+}

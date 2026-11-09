@@ -1,0 +1,7 @@
+{
+  "coldStartupMs": 800,
+  "ramMB": 101,
+  "sheetParseMs": 3056,
+  "maxBlockMs": 2.7,
+  "timestamp": "2026-11-07T20:11:03.832Z"
+}

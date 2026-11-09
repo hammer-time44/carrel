@@ -1,0 +1,25 @@
+node_modules/
+dist/
+dist-electron/
+out/
+release/
+build/
+.cache/
+coverage/
+*.log
+.env
+.env.local
+server/node_modules/
+server/dist/
+
+# Code signing certificates and secrets (NEVER commit credentials)
+*.pfx
+*.p12
+*.cer
+*.crt
+*.key
+*.pem
+*.sig
+.env.*
+
+
